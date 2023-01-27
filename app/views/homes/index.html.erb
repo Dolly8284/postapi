@@ -1,0 +1,20 @@
+<h1> My Stripe Product Page </h1>
+<%= link_to 'Buy My Product', checkouts_path ,lass:"btn btn-secondary"%>
+<%#= link_to "Manage Billing", @portal_session.url %>
+<h2> Users List</h2>
+<div class="container">
+    <table>
+      <tr>
+        <th>Email</th>
+        <th>Date</th>
+      </tr> 
+      <% @users.each do |user| %>
+          <tr>
+              <td><%= user.email %> </td>
+              <td><%= user.created_at.strftime("%d/%b/%Y")%>
+          </tr>
+ <% end %>  
+    </table>
+</div>
+
+ 

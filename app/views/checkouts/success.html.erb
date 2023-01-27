@@ -1,0 +1,13 @@
+<div class="container">
+	<h1> Success Message </h1>
+	 <p> You just bought my stuff!</p>
+
+	<h2> Your total was $<%= @session.amount_total.to_f / 100 %></h2>
+	 <br />
+	<% @line_items.each do |items| %>
+		<h4><%= items.description %><h4>
+			<br />
+		<!-- <p>$<%#= items.price.unit_amount.to_f / 100 %> -->
+		<%#= image_tag(product.images.first) %>
+	<% end %>
+</div>
