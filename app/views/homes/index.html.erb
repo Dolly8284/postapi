@@ -1,20 +1,15 @@
-<h1> My Stripe Product Page </h1>
-<%= link_to 'Buy My Product', checkouts_path ,lass:"btn btn-secondary"%>
-<%#= link_to "Manage Billing", @portal_session.url %>
-<h2> Users List</h2>
-<div class="container">
-    <table>
-      <tr>
-        <th>Email</th>
-        <th>Date</th>
-      </tr> 
-      <% @users.each do |user| %>
-          <tr>
-              <td><%= user.email %> </td>
-              <td><%= user.created_at.strftime("%d/%b/%Y")%>
-          </tr>
- <% end %>  
-    </table>
-</div>
+<div class="container card">
+  <h1> My Stripe Product Page </h1>
+  <%= link_to 'Buy My Product', checkout_path(
+   line_items:['price_1MQpaeSGcdOMm9esIAr1UQ2j'],payment_mode: 'payment'),class:"btn btn-primary" %> | 
 
- 
+  <%= link_to "Subscribe To Me", checkout_path(
+   line_items:['price_1MVtyPSGcdOMm9esRJbJFGGV'],payment_mode: 'subscription'),class:"btn btn-success" %>
+   
+   <% if current_user %>
+      <div class="container card mt-4">
+         <h2> User Info </h2>
+         <%= link_to "Manage Billing", @portal_session.url unless @portal_session.nil? %>
+         <h4><%= current_user.email %></h4>
+   <% end %>
+</div>

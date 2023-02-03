@@ -1,7 +1,11 @@
 <nav class="navbar navbar-light" style="background-color: #fff;">  
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">DEMO_WORKS</a> 
-    <class="nav-item"><%= link_to "Home", root_path, class:'nav-link'%>
+    <!-- <a class="navbar-brand" href="#">DEMO_WORKS</a>  -->
+     <class="nav-item">
+      <%= link_to "Home", root_path, class:'nav-link'%>
+
+      <!-- <class="nav-item"> -->
+      <%#= link_to "Members", members_dashbord_path, class:'nav-link'%>
 
     <div class="logout">
       <% if current_user %> 

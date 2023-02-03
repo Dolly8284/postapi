@@ -11,6 +11,8 @@ gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+ 
+# gem "mailcatcher"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -74,4 +76,17 @@ group :test do
 end
 
 gem "stripe", "~> 8.1"
+
 gem "pay", "~> 6.3"
+gem 'stripe_event' # STRIPE WEBHOOK EVENT HANDLING
+
+gem "letter_opener"
+
+# # To use Braintree + PayPal, also include:
+# gem "braintree", "~> 4.7"
+
+# # To use Paddle, also include:
+# gem "paddle_pay", "~> 0.2"
+
+# # To use Receipts gem for creating invoice and receipt PDFs, also include:
+# gem "receipts", "~> 2.0"

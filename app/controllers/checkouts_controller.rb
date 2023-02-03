@@ -8,9 +8,9 @@ before_action :authenticate_user!
 		 @checkout_session = current_user
 		  .payment_processor
 		  .checkout(
-          mode: 'payment',
-          line_items:'price_1MQpaeSGcdOMm9esIAr1UQ2j',
-          success_url: checkouts_success_url,
+          mode: params[:payment_mode],
+          line_items:params[:line_items],
+          success_url: checkout_success_url,
 		  	)
 	end
 
